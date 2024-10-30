@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    
+</body>
+<script type="text/babel">
+        const courses =[
+        {
+            name : "PHP" , 
+            image : "https://monamedia.co/wp-content/uploads/2022/11/uu-diem-php.png" , 
+            cost :  120
+        } , 
+        {
+            name : "PHP" , 
+            image : "https://monamedia.co/wp-content/uploads/2022/11/uu-diem-php.png" , 
+            cost :  120
+        } , 
+        {
+            name : "PHP" , 
+            image : "https://monamedia.co/wp-content/uploads/2022/11/uu-diem-php.png" , 
+            cost :  120
+        } , 
+    ]; 
+
+    function Course(props){
+        return (
+            <div>
+                <img style={{
+                        width: "100px"
+                    }} src={props.image}/>
+                <span>{props.name}</span>
+                <span>{props.cost}</span>
+            </div>
+        )
+    }
+    const container = document.getElementById("root");
+    const root = ReactDOM.createRoot(container);
+    root.render(
+        <>
+            {
+                courses.map(course=>{
+                    return <Course image={course.image} name={course.name} cost={course.cost}/>
+                })
+            }
+        </>
+    );
+</script>
+
+</html>
